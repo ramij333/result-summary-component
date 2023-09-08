@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL:  https://ramij333.github.io/result-summary-component/
 
 
 ### Built with
@@ -40,6 +40,6 @@ Users should be able to:
 ## Author
 
 Sk Ramij Raja
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/ramij333)
+- Frontend Mentor - https://www.frontendmentor.io/profile/ramij333
 
 
