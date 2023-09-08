@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="card">
+      <div class="left">
+        <h1>Your Result</h1>
+        <div class="score-left">
+          <span class="big-score">76</span>
+          <span class="small-score">of 100</span>
+        </div>
+        <h3>Great</h3>
+        <p>
+          You scored higher than 65% of the people who have taken these tests.
+        </p>
+      </div>
+      
+      <div class="right">
+        <h4>Summary</h4>
+        <div class="scores" id="scores-container">
+
+          <!-- <div class="reaction score">
+            <div class="score-con">
+              <img src="./assets/images/icon-reaction.svg" alt="reaction" />
+              <span>Reaction</span>
+            </div>
+            <div><span class="black-text">80 / </span><span class="grey">100</span></div>
+          </div>
+
+          <div class="memory score">
+            <div class="score-con">
+              <img src="./assets/images/icon-memory.svg" alt="memory" />
+              <span>Memory</span>
+            </div>
+            <div><span class="black-text">92 / </span><span class="grey">100</span></div>
+          </div>
+
+          <div class="verbal score">
+            <div class="score-con">
+              <img src="./assets/images/icon-verbal.svg" alt="verbal" />
+              <span>Verbal</span>
+            </div>
+            <div><span class="black-text">61 / </span><span class="grey">100</span></div>
+          </div>
+
+          <div class="visual score">
+            <div class="score-con">
+              <img src="./assets/images/icon-visual.svg" alt="visual" />
+              <span>Visual</span>
+            </div>
+            <div><span class="black-text">72 / </span><span class="grey">100</span></div>
+          </div> -->
+
+        </div>
+        <button>Continue</button>
+      </div>
+      </div>
+    </main>
+
+    <script>
+
+    const jsonData = [
+      {
+        "category": "Reaction",
+        "score": 80,
+        "icon": "./assets/images/icon-reaction.svg"
+      },
+      {
+        "category": "Memory",
+        "score": 92,
+        "icon": "./assets/images/icon-memory.svg"
+      },
+      {
+        "category": "Verbal",
+        "score": 61,
+        "icon": "./assets/images/icon-verbal.svg"
+      },
+      {
+        "category": "Visual",
+        "score": 72,
+        "icon": "./assets/images/icon-visual.svg"
+      }
+    ];
+
+    const scoresContainer = document.getElementById('scores-container');
+
+    // Loop through the JSON data and create HTML elements for each item
+    jsonData.forEach(item => {
+      const scoreDiv = document.createElement('div');
+      scoreDiv.classList.add('score', item.category.toLowerCase()); // Add a class based on category name
+
+      const scoreConDiv = document.createElement('div');
+      scoreConDiv.classList.add('score-con');
+
+      const iconImg = document.createElement('img');
+      iconImg.src = item.icon;
+      iconImg.alt = item.category.toLowerCase();
+
+      const categoryName = document.createElement('span');
+      categoryName.textContent = item.category;
+
+      const scorePointDiv = document.createElement ('div');
+
+      const scoreValue = document.createElement('span');
+      scoreValue.classList.add('black-text');
+      scoreValue.textContent = `${item.score} / `;
+
+      const totalScore = document.createElement('span');
+      totalScore.classList.add('grey');
+      totalScore.textContent = '100';
+
+      scoreConDiv.appendChild(iconImg);
+      scoreConDiv.appendChild(categoryName);
+      scoreDiv.appendChild(scoreConDiv);
+      scorePointDiv.appendChild(scoreValue);
+      scorePointDiv.appendChild(totalScore);
+      scoreDiv.appendChild(scorePointDiv);
+
+      scoresContainer.appendChild(scoreDiv);
+    });
+
+    </script>
+  </body>
+</html>
